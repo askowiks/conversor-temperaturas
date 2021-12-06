@@ -18,13 +18,38 @@ public class Main {
 
         float celsius = Float.parseFloat(tempInput);
 
-        final float CONVERT_F = (float) ((celsius * 1.8) + 32);
-        final float CONVERT_K = (float) (celsius + 273.15);
-        final float CONVERT_RE = (float) (celsius * 0.8);
-        final float CONVERT_RA = (float) ((celsius *1.8) + 491);
+        float tempF = conversorF(celsius);
+        float tempK = conversorK(celsius);
+        float tempRe = conversorRe(celsius);
+        float tempRa = conversorRa(celsius);
 
-       String mensagem = String.format("A conversão de %.2f °C: \nFahrenheit: %.2f.\nKelvin: %.2f.\nRéaumur: %.2f.\nRankine: %.2f.",
-                celsius, CONVERT_F, CONVERT_K, CONVERT_RE, CONVERT_RA);
+        String mensagem = String.format("A conversão de %.2f °C: \nFahrenheit: %.2f. \nKelvin: %.2f. \nRéaumur: %.2f. \nRankine: %.2f.",
+                celsius, tempF, tempK, tempRe, tempRa);
        showMessageDialog(null, mensagem);
     }
+
+    public static float conversorF(float celsius){
+
+        float tempConvertidaF = (celsius * 1.8f) + 32;
+        return tempConvertidaF;
+    }
+
+    public static float conversorK(float celsius){
+
+        float tempConvertidaK = celsius + 273.15f;
+        return tempConvertidaK;
+    }
+
+    public static float conversorRe(float celsius){
+
+        float tempConvertidaRe = celsius * 0.8f;
+        return tempConvertidaRe;
+    }
+
+    public static float conversorRa(float celsius){
+
+        float tempConvertidaRa = (celsius *1.8f) + 491;
+        return tempConvertidaRa;
+    }
+
 }
